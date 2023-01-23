@@ -1,18 +1,55 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
-    <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-    </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
 
-    <ItemGroup>
-    <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
-    <PackageReference Include="DevExpress.AspNetCore.Reporting" Version="22.2.3" />
-    <PackageReference Include="DevExtreme.AspNet.Data" Version="2.9.0" />
-    <PackageReference Include="DevExtreme.AspNet.Core" Version="22.2.3" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.13" />
-    </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="DevExpress.AspNetCore.Reporting" Version="22.2.3" />
+		<PackageReference Include="DevExtreme.AspNet.Data" Version="2.9.0" />
+		<PackageReference Include="DevExtreme.AspNet.Core" Version="22.2.3" />
+		<PackageReference Include="Microsoft.AspNetCore.ClientAssets" Version="0.1.0-alpha.21528.2" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.13" />
+	</ItemGroup>
 
-    <ProjectExtensions><VisualStudio><UserProperties TemplateFeatures="NETCORE" /></VisualStudio></ProjectExtensions>
+	<ProjectExtensions>
+		<VisualStudio>
+			<UserProperties TemplateFeatures="NETCORE" />
+		</VisualStudio>
+	</ProjectExtensions>
+
+	<ItemGroup>
+	  <ClientAssetsInputs Remove="Assets\builder.js" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ClientAssetsInputs Remove="Assets\devextreme-custom.bundle.config.js" />
+	</ItemGroup>
+
+	<PropertyGroup>
+		<ClientAssetsDirectory>Assets\</ClientAssetsDirectory>
+		<ClientAssetsRestoreCommand Condition="'$(Configuration)' == 'Release'">npm ci</ClientAssetsRestoreCommand>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <ClientAssetsInputs Remove="Assets\webpack.config.js" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ClientAssetsInputs Remove="Assets\layout.js" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ClientAssetsInputs Remove="Assets\.gitignore" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ClientAssetsInputs Remove="Assets\devextreme_custom.bundle.config.js" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Assets\devextreme-custom.bundle.config.js" />
+	</ItemGroup>
 
 </Project>

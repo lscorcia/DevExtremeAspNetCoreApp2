@@ -1,0 +1,37 @@
+{
+  "version": "1.0.0",
+  "name": "client-resources",
+  "private": true,
+  "dependencies": {
+    "@devexpress/analytics-core": "22.2-stable",
+    "@popperjs/core": "^2.11.6",
+    "bootstrap": "^5.2.3",
+    "devexpress-reporting": "22.2-stable",
+    "devextreme": "22.2-stable",
+    "devextreme-aspnet-data": "^2.8.6",
+    "exceljs": "^4.3.0",
+    "file-saver": "^2.0.5",
+    "jquery-ui": "^1.12.1"
+  },
+  "devDependencies": {
+    "@bahmutov/print-env": "^2.1.2",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.7.1",
+    "expose-loader": "^4.0.0",
+    "mini-css-extract-plugin": "^2.6.0",
+    "node-sass-glob-importer": "^5.3.2",
+    "sass": "^1.51.0",
+    "sass-loader": "^13.0.0",
+    "shx": "^0.3.4",
+    "style-loader": "^3.3.1",
+    "terser-webpack-plugin": "^5.3.1",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2",
+    "yargs": "^17.5.1"
+  },
+  "scripts": {
+    "build:Debug": "node builder.js --mode=development",
+    "build:Release": "node builder.js --mode=production"
+  }
+}
